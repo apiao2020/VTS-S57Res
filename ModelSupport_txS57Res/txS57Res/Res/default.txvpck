@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="e75klwr775lztdz7l_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.@unitclass.c_S57ObjectFeatureValue" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.@unitclass.c_S57ObjectAttiValue" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.@unitclass.S57Res" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.@unitclass.GetS57ResObjectFeatureValue(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.@unitclass.GetS57ObjectAtti(System.Integer)" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.@unitclass.c_S57ObjectFeatureValue" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.@unitclass.c_S57ObjectAttiValue" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.@unitclass.S57Res" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57ListType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="660,640,168,36" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57ObjectFeatureValue">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="220,500,170,143" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectFeatureValue.Sort" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectFeatureValue.Code" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectFeatureValue.Acronym" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectFeatureValue.Desc" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.TtxS57ObjectFeatureValue.Sort">
+        <property name="sourceAnchor" value="390,554" />
+        <property name="targetAnchor" value="415,554" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57resAttiValueEnums">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="600,0,208,130" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57resAttiValueEnums.GetItems(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57resAttiValueEnums.Add()" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resAttiValueEnums.Items[System.Integer]" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.TtxS57resAttiValueEnums.Items[System.Integer]">
+        <property name="sourceAnchor" value="808,65" />
+        <property name="targetAnchor" value="840,65" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57resObject">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="386,150,275,327" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resObject.FAcronym" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resObject.FAttribute_A" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resObject.FAttribute_B" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resObject.FAttribute_C" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resObject.FCode" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resObject.FDesc" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resObject.FFeatureType" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57resObject.Create()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57resObject.Destroy()" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resObject.Acronym" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resObject.Attribute_A" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resObject.Attribute_B" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resObject.Attribute_C" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resObject.Code" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resObject.Desc" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resObject.FeatureType" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.TtxS57resObject.FFeatureType">
+        <property name="sourceAnchor" value="479,477" />
+        <property name="targetAnchor" value="479,496" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.TtxS57resObject.FeatureType">
+        <property name="sourceAnchor" value="471,477" />
+        <property name="targetAnchor" value="471,496" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57Resource">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="117,163,260,342" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57Resource.FlstS57Res" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57Resource.FS57Atties" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57Resource.FS57Objects" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.LinkAtti()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.LoadAttiRes()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.LoadObejctRes()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.Create()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.getAtti(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.GetResAtti(System.string)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.findObj(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.ParseAtti()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.ParseObejct()" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57Resource.S57Atties" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57Resource.S57Objects" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.StrToListType(System.string)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.IsIntersection(TArray`1,TArray`1)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57FeatureType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="415,496,128,113" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57FeatureType.ftGeo" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57FeatureType.ftMeta" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57FeatureType.ftCollection" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57FeatureType.ftCartographic" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57resObjectAtti">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="980,320,141,145" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resObjectAtti.FAcronym" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resObjectAtti.FS57Atti" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resObjectAtti.Acronym" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resObjectAtti.S57Atti" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.TtxS57resObjectAtti.FS57Atti">
+        <property name="sourceAnchor" value="980,392" />
+        <property name="targetAnchor" value="979,392" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.TtxS57resObjectAtti.S57Atti">
+        <property name="sourceAnchor" value="980,384" />
+        <property name="targetAnchor" value="979,384" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiName">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="220,0,189,143" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiName.Sort" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiName.Code" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiName.Acronym" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiName.Desc" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiName.Sort">
+        <property name="sourceAnchor" value="220,49" />
+        <property name="targetAnchor" value="180,49" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="980,160,140,143" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiType.atNone" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiType.atInteger" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiType.atFolat" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiType.atString" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiType.atEmnu" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiType.atList" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57resAtti">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="699,163,280,327" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resAtti.FAcronym" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resAtti.FAttiType" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resAtti.FCode" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resAtti.FDesc" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resAtti.FEnums" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resAtti.FListTyles" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57resAtti.Create()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57resAtti.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57resAtti.GetMnum(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57resAtti.GetMnumsValue(System.string)" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resAtti.Acronym" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resAtti.AttiType" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resAtti.Code" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resAtti.Desc" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resAtti.Enums" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resAtti.ListTyles" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.TtxS57resAtti.FAttiType">
+        <property name="sourceAnchor" value="979,233" />
+        <property name="targetAnchor" value="980,233" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.TtxS57resAtti.FEnums">
+        <property name="sourceAnchor" value="761,163" />
+        <property name="targetAnchor" value="761,130" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.TtxS57resAtti.FListTyles">
+        <property name="sourceAnchor" value="763,490" />
+        <property name="targetAnchor" value="763,640" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.TtxS57resAtti.AttiType">
+        <property name="sourceAnchor" value="979,225" />
+        <property name="targetAnchor" value="980,225" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.TtxS57resAtti.Enums">
+        <property name="sourceAnchor" value="761,163" />
+        <property name="targetAnchor" value="761,130" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Res.TtxS57resAtti.ListTyles">
+        <property name="sourceAnchor" value="755,490" />
+        <property name="targetAnchor" value="755,640" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiTypeOld">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="20,0,160,98" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiTypeOld.otFeatureObject" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiTypeOld.otNationalLanguage" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiTypeOld.otSpatialAndMetaObject" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57resAttiValueEnum">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="840,0,158,145" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resAttiValueEnum.FCode" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57resAttiValueEnum.FDesc" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resAttiValueEnum.Code" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57resAttiValueEnum.Desc" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57GeoType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="0,400,108,113" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57GeoType.vtNone" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57GeoType.vtPoint" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57GeoType.vtLine" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57GeoType.vtArea" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57ResGeoType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="447,1,130,113" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ResGeoType.vtNone" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ResGeoType.vtPoint" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ResGeoType.vtLine" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Res.TtxS57ResGeoType.vtArea" />
+    </reference>
+  </view>
+</nodeSet>

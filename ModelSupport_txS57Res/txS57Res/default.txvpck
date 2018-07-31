@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="eqqiun1bdgep4159q_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::pwpk2tvvwge30ea1s_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="280,160,135,211" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57dbFile" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57dbFunture" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57dbGeoType" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ResFeature" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ResFeatures" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ResFiles" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ResFileClass" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ResFile" />
+    </reference>
+    <reference referencedUin="design:view:::e75klwr775lztdz7l_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="@__package_fqn" value="txS57Res.Res" />
+      <property name="bounds" value="500,160,172,318" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57ListType" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57FeatureType" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57GeoType" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiName" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiType" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57ObjectAttiTypeOld" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57ObjectFeatureValue" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57resAtti" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57resAttiValueEnum" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57resAttiValueEnums" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57resObject" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57resObjectAtti" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57Resource" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57ResGeoType" />
+    </reference>
+    <reference referencedUin="design:view:::6w0zwstj9ep_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="@__package_fqn" value="txS57Res.DB" />
+      <property name="bounds" value="780,160,128,151" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.DB.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.DB.TtxS57DBManager" />
+    </reference>
+    <reference referencedUin="design:view:::pr9ak06306r_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="@__package_fqn" value="txS57Res.Reg" />
+      <property name="bounds" value="940,160,100,134" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Reg.@unitclass" />
+    </reference>
+  </view>
+</nodeSet>

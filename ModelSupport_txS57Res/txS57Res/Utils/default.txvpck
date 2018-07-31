@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="pwpk2tvvwge30ea1s_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ResFileClass">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,131,67" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ResFiles">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="160,80,346,113" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Utils.TtxS57ResFiles.Add()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Utils.TtxS57ResFiles.Create()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ResFile">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="525,1,194,193" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Utils.TtxS57ResFile.FfileName" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Utils.TtxS57ResFile.Ffeatures" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Utils.TtxS57ResFile.FmaxRect" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Utils.TtxS57ResFile.fileName" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Utils.TtxS57ResFile.furntures" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Utils.TtxS57ResFile.maxRect" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Utils.TtxS57ResFile.Destroy()" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Utils.TtxS57ResFile.Ffeatures">
+        <property name="sourceAnchor" value="719,66" />
+        <property name="targetAnchor" value="757,66" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Utils.TtxS57ResFile.furntures">
+        <property name="sourceAnchor" value="719,58" />
+        <property name="targetAnchor" value="757,58" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Utils.TtxS57ResFile.Create()" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Utils.TtxS57ResFile.Ftag" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Utils.TtxS57ResFile.tag" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ResFeature">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="620,260,288,253" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Utils.TtxS57ResFeature.Fattries" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Utils.TtxS57ResFeature.Fcode" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Utils.TtxS57ResFeature.Fgeo" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Utils.TtxS57ResFeature.FgeoType" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Utils.TtxS57ResFeature.Ftag" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Utils.TtxS57ResFeature.Create()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Utils.TtxS57ResFeature.Destroy()" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Utils.TtxS57ResFeature.code" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Utils.TtxS57ResFeature.attries" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Utils.TtxS57ResFeature.tag" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Utils.TtxS57ResFeature.geo" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Utils.TtxS57ResFeature.geoType" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ResFeatures">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="757,1,365,113" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Utils.TtxS57ResFeatures.Add()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Utils.TtxS57ResFeatures.Create()" />
+    </reference>
+  </view>
+</nodeSet>

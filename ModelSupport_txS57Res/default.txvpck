@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="2m76v37jqcm_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::eqqiun1bdgep4159q_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="400,180,100,164" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="design:view:::pwpk2tvvwge30ea1s_v" />
+      <reference referencedUin="design:view:::e75klwr775lztdz7l_v">
+        <property name="@__package_fqn" value="txS57Res.Res" />
+      </reference>
+      <reference referencedUin="design:view:::6w0zwstj9ep_v">
+        <property name="@__package_fqn" value="txS57Res.DB" />
+      </reference>
+      <reference referencedUin="design:view:::pr9ak06306r_v">
+        <property name="@__package_fqn" value="txS57Res.Reg" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>
