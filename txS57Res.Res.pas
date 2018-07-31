@@ -556,7 +556,7 @@ function GetS57ObjectAtti(ACode: Integer): TtxS57ObjectAttiName;
 
 implementation
 //{$R txS57ResAtti.res}
-// {$R txS57Res.dres}
+ {$R txS57Res.dres}
 
 function GetS57ResObjectFeatureValue(ACode: Integer): TtxS57ObjectFeatureValue;
 var
@@ -836,7 +836,7 @@ end;
 
 procedure TtxS57Resource.ParseAtti;
 var
-  iIndex, iNum: Integer;
+  iNum: Integer;
   _resAtti: TtxS57resAtti;
 
   function GetEndIndex(start: integer): integer;
@@ -987,7 +987,7 @@ end;
 
 procedure TtxS57Resource.ParseObejct;
 var
-  iCount, iIndex, iNum: Integer;
+  iNum: Integer;
   _lst: TStrings;
   _resObejct: TtxS57resObject;
 
