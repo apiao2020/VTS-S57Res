@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="tw6s6jzfibl_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataFile">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="660,280,260,440" />
+      <property name="hideClass" value="False" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataFile.FFileName" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataFile.FileName" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataFile.FFeatures" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Json.TtxS57DataFile.Create()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Json.TtxS57DataFile.Destroy()" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataFile.Features" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataFile.FRect" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataFile.Rect" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Json.TtxS57DataFile.FRect">
+        <property name="sourceAnchor" value="920,312" />
+        <property name="targetAnchor" value="1020,312" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Json.TtxS57DataFile.Rect">
+        <property name="sourceAnchor" value="920,304" />
+        <property name="targetAnchor" value="1020,304" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DBJsonManager">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1260,360,150,143" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Json.TtxS57DBJsonManager.Save(txS57Res.Utils.TtxS57ResFiles,System.string)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Json.TtxS57DBJsonManager.Load(System.string,txS57Res.Utils.TtxS57ResFiles)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Json.TtxS57DBJsonManager.Save(txS57Res.Utils.TtxS57ResFiles,System.Classes.TStream)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Json.TtxS57DBJsonManager.Load(System.Classes.TStream,txS57Res.Utils.TtxS57ResFiles)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataGroup">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="380,440,141,147" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataGroup.FFiles" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Json.TtxS57DataGroup.Create()" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataGroup.Files" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Json.TtxS57DataGroup.Destroy()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataFeature">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="984,403,150,237" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataFeature.FCode" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataFeature.Code" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataFeature.FAttries" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Json.TtxS57DataFeature.Create()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Json.TtxS57DataFeature.Destroy()" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataFeature.Attries" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataFeature.FGeo" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataFeature.Geo" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataFeature.FGeoType" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataFeature.GeoType" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataAttr">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1251,643,102,145" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataAttr.FKey" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataAttr.FValue" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataAttr.Key" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataAttr.Value" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataRect">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1020,140,109,205" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataRect.FWest" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataRect.FEast" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataRect.FSouth" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataRect.FNorth" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataRect.West" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataRect.East" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataRect.North" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataRect.South" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataLonlat">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1280,140,117,175" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataLonlat.FLat" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataLonlat.FLon" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataLonlat.FHeight" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataLonlat.Lon" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataLonlat.Lat" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataLonlat.Height" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataLonlats">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,155,147" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57DataLonlats.FLonlats" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Json.TtxS57DataLonlats.Create()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Json.TtxS57DataLonlats.Destroy()" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Json.TtxS57DataLonlats.Lonlats" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57FeatureType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="184,133,128,113" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57FeatureType.ftGeo" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57FeatureType.ftMeta" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57FeatureType.ftCollection" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Json.TtxS57FeatureType.ftCartographic" />
+    </reference>
+  </view>
+</nodeSet>

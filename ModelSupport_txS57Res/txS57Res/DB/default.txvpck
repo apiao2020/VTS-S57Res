@@ -9,7 +9,12 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.DB.TtxS57DBManager">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="10,10,146,81" />
+      <property name="bounds" value="10,10,146,162" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.DB.TtxS57DBManager.FDB" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.DB.TtxS57DBManager.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.DB.TtxS57DBManager.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.DB.TtxS57DBManager.clear()" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.DB.TtxS57DBManager.DB" />
     </reference>
   </view>
 </nodeSet>

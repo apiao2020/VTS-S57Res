@@ -1,7 +1,6 @@
 package txS57Res;
 
 {$R *.res}
-//{$R *.dres}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -30,12 +29,23 @@ package txS57Res;
 
 requires
   rtl,
-  txGis;
+  txGis,
+  txJsonToClass;
 
 contains
-  txS57Res.Utils in 'txS57Res.Utils.pas',
-  txS57Res.Res in 'txS57Res.Res.pas',
+  txS57DB in 'txS57DB.pas',
   txS57Res.DB in 'txS57Res.DB.pas',
-  txS57Res.Reg in 'txS57Res.Reg.pas';
+  txS57Res.Import.db.mgr in 'txS57Res.Import.db.mgr.pas',
+  txS57Res.Import.db in 'txS57Res.Import.db.pas',
+  txS57Res.Import.db.utils in 'txS57Res.Import.db.utils.pas',
+  txS57Res.Import.Mgr in 'txS57Res.Import.Mgr.pas',
+  txS57Res.Import in 'txS57Res.Import.pas',
+  txS57Res.Import.Utils in 'txS57Res.Import.Utils.pas',
+  txS57Res.Json in 'txS57Res.Json.pas',
+  txS57Res.Reg in 'txS57Res.Reg.pas',
+  txS57Res.Res in 'txS57Res.Res.pas',
+  txS57Res.Utils in 'txS57Res.Utils.pas',
+  txS57Res.Expend in 'txS57Res.Expend.pas';
 
 end.
+

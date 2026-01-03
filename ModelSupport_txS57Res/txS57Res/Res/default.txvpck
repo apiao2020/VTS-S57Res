@@ -94,6 +94,7 @@
       <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Res.TtxS57Resource.S57Objects" />
       <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.StrToListType(System.string)" />
       <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.IsIntersection(TArray`1,TArray`1)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Res.TtxS57Resource.IsIntersection(System.Integer[],System.Integer[])" />
     </reference>
     <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Res.TtxS57FeatureType">
       <property name="$shortcutReference" value="true" />

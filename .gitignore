@@ -2,6 +2,7 @@ __history/*
 __recovery/*
 Linux64/*
 Win32/*
+Win64/*
 txS57Res_project.tvsconfig
 txS57DB.res
 txS57DB.stat
@@ -15,3 +16,7 @@ txS57Res.deployproj
 txS57DB.identcache
 txS57DB_project.tvsconfig
 txS57Res.dsk
+*.dcu
+*.o
+*.res
+*.~dsk

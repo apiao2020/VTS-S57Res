@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="lvqxntmvowf09uiks_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::zymjs6bnrmp_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="@__package_fqn" value="txS57Res.Import.Mgr" />
+      <property name="bounds" value="680,120,140,151" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Mgr.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Mgr.TtxS57ResImportMgr" />
+    </reference>
+    <reference referencedUin="design:view:::t00s2nqiaum_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="@__package_fqn" value="txS57Res.Import.Utils" />
+      <property name="bounds" value="400,120,189,213" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Utils.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportFeature" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportCaption" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportFeatureType" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportGeoType" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportDesc" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportHead" />
+    </reference>
+    <reference referencedUin="design:view:::r9cqookxkak_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="@__package_fqn" value="txS57Res.Import.db" />
+      <property name="bounds" value="600,420,100,134" />
+      <reference referencedUin="design:view:::oo31llnsy3f_v">
+        <property name="@__package_fqn" value="txS57Res.Import.db.utils" />
+      </reference>
+      <reference referencedUin="design:view:::nyyjueaooblguih0h_v">
+        <property name="@__package_fqn" value="txS57Res.Import.db.mgr" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

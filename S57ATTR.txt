@@ -16,7 +16,7 @@ Attribute type: E
 4 : lattice beacon  
 5 : pile beacon
 6 : cairn  
-7 : buoyant beacon  
+7 : buoyant beacon
 enum end
 >
 <
@@ -40,13 +40,13 @@ Attribute: Buoy shape
 Acronym: BOYSHP
 Code: 4
 Attribute type: E
-1 : conical (nun, ogival)  
-2 : can (cylindrical)  
-3 : spherical  
-4 : pillar  
-5 : spar (spindle)  
-6 : barrel (tun)  
-7 : super-buoy  
+1 : conical (nun, ogival)
+2 : can (cylindrical)
+3 : spherical
+4 : pillar
+5 : spar (spindle)
+6 : barrel (tun)
+7 : super-buoy
 8 : ice buoy
 enum end
 >
@@ -83,14 +83,14 @@ Acronym: CATACH
 Code: 8
 Attribute type: L
 1 : unrestricted anchorage
-2 : deep water anchorage  
-3 : tanker anchorage  
-4 : explosives anchorage  
-5 : quarantine anchorage  
-6 : sea-plane anchorage  
+2 : deep water anchorage
+3 : tanker anchorage
+4 : explosives anchorage
+5 : quarantine anchorage
+6 : sea-plane anchorage
 7 : small craft anchorage
-8 : small craft mooring area  
-9 : anchorage for periods up to 24 hours  
+8 : small craft mooring area
+9 : anchorage for periods up to 24 hours
 10 : anchorage for a limited period of time
 enum end
 >
@@ -99,14 +99,14 @@ Attribute: Category of bridge
 Acronym: CATBRG
 Code: 9
 Attribute type: L
-1 : fixed bridge  
-2 : opening bridge  
-3 : swing bridge  
-4 : lifting bridge  
-5 : bascule bridge  
-6 : pontoon bridge  
-7 : draw bridge  
-8 : transporter bridge  
+1 : fixed bridge
+2 : opening bridge
+3 : swing bridge
+4 : lifting bridge
+5 : bascule bridge
+6 : pontoon bridge
+7 : draw bridge
+8 : transporter bridge
 9 : footbridge
 10 : viaduct
 11 : aqueduct
@@ -118,9 +118,9 @@ Attribute: Category of built-up area
 Acronym: CATBUA
 Code: 10
 Attribute type: E
-1 : urban area  
-2 : settlement  
-3 : village   
+1 : urban area
+2 : settlement
+3 : village
 4 : town
 5 : city
 6 : holiday village
@@ -131,11 +131,11 @@ Attribute: Category of cable
 Acronym: CATCBL
 Code: 11
 Attribute type: E
-1 : power line  
+1 : power line
 2 : telephone/telegraph
 3 : transmission line
-4 : telephone  
-5 : telegraph  
+4 : telephone
+5 : telegraph
 6 : mooring cable/chain
 enum end
 >
@@ -154,10 +154,10 @@ Attribute: Category of cardinal mark
 Acronym: CATCAM
 Code: 13
 Attribute type: E
-1 : north cardinal mark  
-2 : east cardinal mark  
-3 : south cardinal mark  
-4 : west cardinal mark  
+1 : north cardinal mark
+2 : east cardinal mark
+3 : south cardinal mark
+4 : west cardinal mark
 enum end
 >
 <

@@ -6,7 +6,7 @@
     <property name="$name" value="default" />
     <reference referencedUin="design:view:::pwpk2tvvwge30ea1s_v">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="280,160,135,211" />
+      <property name="bounds" value="280,160,135,241" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57dbFile" />
       <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57dbFunture" />
@@ -17,6 +17,8 @@
       <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ResFiles" />
       <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ResFileClass" />
       <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ResFile" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57ScaleRange" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Utils.TtxS57resCache" />
     </reference>
     <reference referencedUin="design:view:::e75klwr775lztdz7l_v">
       <property name="$shortcutReference" value="true" />
@@ -52,6 +54,45 @@
       <property name="@__package_fqn" value="txS57Res.Reg" />
       <property name="bounds" value="940,160,100,134" />
       <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Reg.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::lvqxntmvowf09uiks_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="@__package_fqn" value="txS57Res.Import" />
+      <property name="bounds" value="760,480,100,181" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.@unitclass" />
+      <reference referencedUin="design:view:::zymjs6bnrmp_v">
+        <property name="@__package_fqn" value="txS57Res.Import.Mgr" />
+      </reference>
+      <reference referencedUin="design:view:::t00s2nqiaum_v">
+        <property name="@__package_fqn" value="txS57Res.Import.Utils" />
+      </reference>
+      <reference referencedUin="design:view:::r9cqookxkak_v" />
+    </reference>
+    <reference referencedUin="design:view:::tw6s6jzfibl_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="@__package_fqn" value="txS57Res.Json" />
+      <property name="bounds" value="1060,440,154,288" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataFile" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DBJsonManager" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataGroup" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataFeature" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataAttr" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataRect" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataLonlat" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57DataLonlats" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Json.TtxS57FeatureType" />
+    </reference>
+    <reference referencedUin="design:view:::jm4s31x63ctwmx62g_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="@__package_fqn" value="txS57Res.Expend" />
+      <property name="bounds" value="120,160,115,181" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Expend.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Expend.TS57Expend" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Expend.TS57ExpendFeature" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Expend.TS57ExpendFile" />
     </reference>
   </view>
 </nodeSet>

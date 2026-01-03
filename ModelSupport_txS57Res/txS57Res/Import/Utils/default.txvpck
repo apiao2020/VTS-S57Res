@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="t00s2nqiaum_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Utils.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportFeature">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,214,113" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportFeature.code" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportFeature.Acronym" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportFeature.Acronym">
+        <property name="sourceAnchor" value="206,10" />
+        <property name="targetAnchor" value="206,1" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportCaption">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="188,1,262,36" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportFeatureType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="469,1,187,113" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportFeatureType.ftGeo" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportFeatureType.ftMeta" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportFeatureType.ftCollection" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportFeatureType.ftCartographic" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportGeoType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="188,56,167,113" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportGeoType.vtNone" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportGeoType.vtArea" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportGeoType.vtLine" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.Utils.TtxS57ResImportGeoType.vtPoint" />
+    </reference>
+  </view>
+</nodeSet>

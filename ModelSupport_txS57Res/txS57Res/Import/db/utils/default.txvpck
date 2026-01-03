@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="oo31llnsy3f_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption6">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,179,36" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption7">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="208,1,179,36" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption16">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="208,56,193,36" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption10">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="19,65,186,36" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption64">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="439,1,193,36" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption8">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="439,56,179,36" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption5">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="439,111,179,36" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption256">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="670,1,207,36" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TFeatureFile">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="129,120,166,113" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TFeatureFile.rect" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TFeatureFile.feature" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="236,243,166,233" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.caption" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.desc" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.version" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.buildTime" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.key" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.rect" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.length" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.feature" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.res" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.geo" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.caption">
+        <property name="sourceAnchor" value="392,243" />
+        <property name="targetAnchor" value="523,37" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.desc">
+        <property name="sourceAnchor" value="402,296" />
+        <property name="targetAnchor" value="749,37" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.buildTime">
+        <property name="sourceAnchor" value="308,243" />
+        <property name="targetAnchor" value="308,92" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles.key">
+        <property name="sourceAnchor" value="390,243" />
+        <property name="targetAnchor" value="516,37" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TLonlat">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,120,86,113" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TLonlat.lon" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Import.db.utils.TLonlat.lat" />
+    </reference>
+  </view>
+</nodeSet>

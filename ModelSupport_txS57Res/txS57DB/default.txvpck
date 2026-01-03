@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="c3z6lox509p_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57DB.TtxS57dbGeoType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,122,113" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbGeoType.dgtNone" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbGeoType.dgtPoint" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbGeoType.dgtLine" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbGeoType.dgtArea" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57DB.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57DB.TtxS57dbFile">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="151,1,248,253" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbFile.FfileName" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbFile.Ffurntures" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbFile.FmaxRect" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbFile.FMinScale" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbFile.FMaxScale" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57DB.TtxS57dbFile.Create()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57DB.TtxS57dbFile.Destroy()" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57DB.TtxS57dbFile.fileName" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57DB.TtxS57dbFile.furntures" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57DB.TtxS57dbFile.maxRect" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57DB.TtxS57dbFile.MinScale" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57DB.TtxS57dbFile.MaxScale" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57DB.TtxS57dbFunture">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="418,1,288,253" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbFunture.Fattries" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbFunture.Fcode" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbFunture.Fgeo" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbFunture.FgeoType" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57DB.TtxS57dbFunture.FMinScale" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57DB.TtxS57dbFunture.code" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57DB.TtxS57dbFunture.attries" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57DB.TtxS57dbFunture.geo" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57DB.TtxS57dbFunture.geoType" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57DB.TtxS57dbFunture.MinScale" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57DB.TtxS57dbFunture.Create()" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57DB.TtxS57dbFunture.Destroy()" />
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57DB.TtxS57dbFunture.FgeoType">
+        <property name="sourceAnchor" value="418,66" />
+        <property name="targetAnchor" value="132,66" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:txS57Res:txS57DB.TtxS57dbFunture.geoType">
+        <property name="sourceAnchor" value="418,57" />
+        <property name="targetAnchor" value="132,58" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

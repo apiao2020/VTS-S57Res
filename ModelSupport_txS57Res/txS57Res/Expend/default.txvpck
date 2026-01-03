@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="jm4s31x63ctwmx62g_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Expend.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Expend.TS57ExpendFeature">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="280,220,133,67" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:l_gnt:src:txS57Res:txS57Res.Expend.TS57ExpendFeature:txS57Res.Expend.TS57Expend">
+        <property name="sourceAnchor" value="406,220" />
+        <property name="targetAnchor" value="406,183" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Expend.TS57ExpendFile">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="400,340,127,101" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Expend.TS57ExpendFile.FShowRect" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Expend.TS57ExpendFile.ShowRect" />
+      <reference referencedUin="delphi:l_gnt:src:txS57Res:txS57Res.Expend.TS57ExpendFile:txS57Res.Expend.TS57Expend">
+        <property name="sourceAnchor" value="459,340" />
+        <property name="targetAnchor" value="459,183" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Expend.TS57Expend">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="400,20,119,163" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Expend.TS57Expend.FMinScale" />
+      <reference referencedUin="delphi:e_field:src:txS57Res:txS57Res.Expend.TS57Expend.FMaxScale" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Expend.TS57Expend.MinSCale" />
+      <reference referencedUin="delphi:e_property:src:txS57Res:txS57Res.Expend.TS57Expend.MaxScale" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Expend.TS57Expend.Create()">
+        <property name="bounds" value="95,-82,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Expend.TS57Expend.Destroy()">
+        <property name="bounds" value="115,-82,0,0" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

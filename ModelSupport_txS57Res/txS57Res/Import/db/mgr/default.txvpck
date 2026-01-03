@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="nyyjueaooblguih0h_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.mgr.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.mgr.S57ResImprotDBMgr">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,198,173" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Import.db.mgr.S57ResImprotDBMgr.importDB(txS57Res.Utils.TtxS57ResFiles,System.string)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Import.db.mgr.S57ResImprotDBMgr.importDB(System.Classes.TStream,txS57Res.Utils.TtxS57ResFiles,System.string)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Import.db.mgr.S57ResImprotDBMgr.buildFile(txS57Res.Utils.TtxS57ResFile,System.Classes.TStream,System.Classes.TStream,System.Classes.TStream,System.Classes.TStream)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Import.db.mgr.S57ResImprotDBMgr.buildFeature(txS57Res.Utils.TtxS57ResFeature,System.Classes.TStream,System.Classes.TStream,System.Classes.TStream)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Import.db.mgr.S57ResImprotDBMgr.buildAttrie(txS57Res.Utils.TtxS57ResFeature,System.Classes.TStream)" />
+      <reference referencedUin="delphi:e_method:src:txS57Res:txS57Res.Import.db.mgr.S57ResImprotDBMgr.buildLonlat(txS57Res.Utils.TtxS57ResFeature,System.Classes.TStream)" />
+    </reference>
+  </view>
+</nodeSet>

@@ -98,6 +98,7 @@ type
     property S57Atti: TtxS57resAtti read FS57Atti write FS57Atti;
   end;
 
+
   TtxS57resObject = class(TObject)
   private
     FAcronym: string;
@@ -234,6 +235,7 @@ const
 (Sort: ftGeo; Code: 87; Acronym: 'OFSPLF'; Desc: 'Offshore platform'),
 (Sort: ftGeo; Code: 88; Acronym: 'OSPARE'; Desc: 'Offshore production area'),
 (Sort: ftGeo; Code: 89; Acronym: 'OILBAR'; Desc: 'Oil barrier'),
+
 (Sort: ftGeo; Code: 90; Acronym: 'PILPNT'; Desc: 'Pile'),
 (Sort: ftGeo; Code: 91; Acronym: 'PILBOP'; Desc: 'Pilot boarding place'),
 (Sort: ftGeo; Code: 92; Acronym: 'PIPARE'; Desc: 'Pipeline area'),
@@ -555,8 +557,8 @@ function GetS57ResObjectFeatureValue(ACode: Integer): TtxS57ObjectFeatureValue;
 function GetS57ObjectAtti(ACode: Integer): TtxS57ObjectAttiName;
 
 implementation
-//{$R txS57ResAtti.res}
- {$R txS57Res.dres}
+
+ {$R txS57ResResource.res}
 
 function GetS57ResObjectFeatureValue(ACode: Integer): TtxS57ObjectFeatureValue;
 var
@@ -800,7 +802,7 @@ var
   buf: TBytes;
   sbuf: string;
 begin
-//  _ResStream := TResourceStream.Create(HInstance, 'S057Atti', PChar('TXT'));  只是window平台采用
+//  _ResStream := TResourceStream.Create(HInstance, 'S057Atti', PChar('TXT'));  //只是window平台采用
   _ResStream := TResourceStream.Create(HInstance, 'S57Atti', RT_RCDATA);
   try
     SetLength(buf, _ResStream.Size);
@@ -871,16 +873,21 @@ var
   end;
 
   function GetAttiType(start: integer): TtxS57ObjectAttiType;
+  const
+    c_head = 'Attribute type: ';
   var
     i: integer;
     sAtti: char;
+    row: string;
   begin
     Result := atNone;
     for i := start to Length(FlstS57Res) - 1 do
     begin
-      if Pos('Attribute type: ', FlstS57Res[i]) = 1 then
+      row := FlstS57Res[i];
+      if row.StartsWith(c_head) then
       begin
-        sAtti := Trim(StringReplace(FlstS57Res[i], 'Attribute type: ', '', []))[1];
+        row := FlstS57Res[i].Substring(Length(c_head), 1);
+        sAtti := char(TEncoding.ASCII.GetBytes(row)[0]);
         case sAtti of
           'A', 'S': Result := atString;
           'F'     : Result := atFolat;
@@ -938,7 +945,7 @@ var
     _enum: TtxS57resAttiValueEnum;
   begin
     _resAtti.ListTyles := [];
-    for i := start to Length(FlstS57Res) - 1 do
+    for i := start + 4 to Length(FlstS57Res) - 1 do
     begin
       if Pos('enum end', FlstS57Res[i]) = 1 then
       begin
@@ -1061,17 +1068,18 @@ var
   procedure GetAttis(start: integer; AHead: string);
   var
     i, j: integer;
-    sData: string;
+    sData, row: string;
     _ObjectAtti: TtxS57resObjectAtti;
   begin
 
 
       for i := start to Length(FlstS57Res) - 1 do
       begin
-        if Pos('>', FlstS57Res[i]) = 1 then Exit;
-        if Pos(AHead,  FlstS57Res[i]) = 1 then
+        row := FlstS57Res[i];
+        if Pos('>', row) = 1 then Exit;
+        if Pos(AHead, row) = 1 then
         begin
-          sData := Trim(StringReplace(FlstS57Res[i], AHead, '', []));
+          sData := Trim(StringReplace(row, AHead, '', []));
           _lst.Clear;
           ExtractStrings([';'], [], PChar(sData), _lst);
           for j := 0 to _lst.Count - 1 do

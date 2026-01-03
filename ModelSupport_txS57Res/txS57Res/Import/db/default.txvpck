@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="r9cqookxkak_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::oo31llnsy3f_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="@__package_fqn" value="txS57Res.Import.db.utils" />
+      <property name="bounds" value="500,220,120,211" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption6" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption7" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption16" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption10" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption64" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption8" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption5" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TCaption256" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TFeatureFile" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TFeatureFiles" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TLonlat" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TImportFile" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TGeoRect" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TImportFeature" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.utils.TImportFileGroup" />
+    </reference>
+    <reference referencedUin="design:view:::nyyjueaooblguih0h_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="@__package_fqn" value="txS57Res.Import.db.mgr" />
+      <property name="bounds" value="720,240,140,151" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.mgr.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57Res.Import.db.mgr.S57ResImprotDBMgr" />
+    </reference>
+  </view>
+</nodeSet>

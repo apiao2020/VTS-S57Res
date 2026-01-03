@@ -6,7 +6,7 @@
     <property name="$name" value="default" />
     <reference referencedUin="design:view:::eqqiun1bdgep4159q_v">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="400,180,100,164" />
+      <property name="bounds" value="400,120,100,194" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="design:view:::pwpk2tvvwge30ea1s_v" />
       <reference referencedUin="design:view:::e75klwr775lztdz7l_v">
@@ -18,6 +18,24 @@
       <reference referencedUin="design:view:::pr9ak06306r_v">
         <property name="@__package_fqn" value="txS57Res.Reg" />
       </reference>
+      <reference referencedUin="design:view:::lvqxntmvowf09uiks_v">
+        <property name="@__package_fqn" value="txS57Res.Import" />
+      </reference>
+      <reference referencedUin="design:view:::tw6s6jzfibl_v">
+        <property name="@__package_fqn" value="txS57Res.Json" />
+        <property name="bounds" value="55,-10,0,0" />
+      </reference>
+      <reference referencedUin="design:view:::jm4s31x63ctwmx62g_v">
+        <property name="@__package_fqn" value="txS57Res.Expend" />
+      </reference>
+    </reference>
+    <reference referencedUin="design:view:::c3z6lox509p_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,127,198" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57DB.TtxS57dbGeoType" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57DB.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57DB.TtxS57dbFile" />
+      <reference referencedUin="delphi:e_class:src:txS57Res:txS57DB.TtxS57dbFunture" />
     </reference>
   </view>
 </nodeSet>

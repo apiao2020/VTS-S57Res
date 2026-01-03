@@ -1,0 +1,3 @@
+/* 'txS57Res' Package */
+OUTPUT_FORMAT(elf64-x86-64)
+GROUP ( bpltxS57Res.so txS57Res_nonshared.a )
