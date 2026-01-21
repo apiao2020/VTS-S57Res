@@ -30,7 +30,8 @@ package txS57Res;
 requires
   rtl,
   txGis,
-  txJsonToClass;
+  txJsonToClass,
+  txgisCanvas;
 
 contains
   txS57DB in 'txS57DB.pas',

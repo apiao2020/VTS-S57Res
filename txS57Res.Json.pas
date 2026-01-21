@@ -155,13 +155,13 @@ begin
          _resFile := TtxS57DataFile(resFileJson);
          resFile :=  ADB.Add;
          resFile.FileName := _resFile.fileName;
-         resFile.maxRect.Create(_resFile.Rect.East, _resFile.Rect.South,  _resFile.Rect.West, _resFile.Rect.North);
+         resFile.CoordinateRect.Create(_resFile.Rect.East, _resFile.Rect.South,  _resFile.Rect.West, _resFile.Rect.North);
 
 
          for resFeatureJson in _resFile.Features do
          begin
            _resFeature := TtxS57DataFeature(resFeatureJson);
-           resFeature :=  resFile.furntures.Add(resFile);
+           resFeature :=  resFile.features.Add(resFile);
            resFeature.Code := _resFeature.code;
            resFeature.GeoType :=  TtxS57ResGeoType(_resFeature.geoType);
 
@@ -232,13 +232,13 @@ begin
        _resFile :=  TtxS57DataFile.Create;
        _resFile.FileName := ExtractFileName(resFile.fileName);
 
-       _resFile.Rect.North := resFile.maxRect.north;
-       _resFile.Rect.South := resFile.maxRect.south;
-       _resFile.Rect.West := resFile.maxRect.west;
-       _resFile.Rect.East := resFile.maxRect.east;
+       _resFile.Rect.North := resFile.CoordinateRect.north;
+       _resFile.Rect.South := resFile.CoordinateRect.south;
+       _resFile.Rect.West := resFile.CoordinateRect.west;
+       _resFile.Rect.East := resFile.CoordinateRect.east;
        encGroup.Files.Add(_resFile);
 
-       for resFeature in resFile.furntures do
+       for resFeature in resFile.features do
        begin
          _resFeature :=  TtxS57DataFeature.Create;
          _resFeature.Code := resFeature.code;

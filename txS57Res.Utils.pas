@@ -1,12 +1,14 @@
-unit txS57Res.Utils;
+ï»¿unit txS57Res.Utils;
 
 interface
 uses
   System.Classes, System.SysUtils, System.Generics.Collections,
   System.IOUtils,
+  txgisCanvas.Draw,
   txS57Res.Expend,
   txS57Res.Res,
   txGis.Utils,
+ // CodeSiteLogging,
   txGis.Lib;
 
 type
@@ -21,38 +23,58 @@ type
 
 const
   C_S57ScaleRange: array[0..5] of TtxS57ScaleRange = (
-   (level: 1; max: 349999; min: 1499999; English: 'Overview'; Chinese: '¸ÅÀÀ'),
-   (level: 2; max: 1499999; min: 350000; English: 'General';Chinese: 'Ò»°ã'),
-   (level: 3; max: 349999; min: 90000; English: 'Coastal';Chinese: 'ÑØº£'),
-   (level: 4; max: 89999; min: 22000; English: 'Approach';Chinese: '½ø¸Û'),
-   (level: 5; max: 21999; min: 4000; English: 'Harbour';Chinese: '¸Û¿Ú'),
-   (level: 6; max: 3999; min: 0; English: 'Berthing'; Chinese: '¿¿²´')
+   (level: 1; max: 3000000; min: 150000; English: 'Overview'; Chinese: 'æ¦‚è§ˆ'),
+   (level: 2; max: 1499999; min: 350000; English: 'General';Chinese: 'ä¸€èˆ¬'),
+   (level: 3; max: 349999; min: 90000; English: 'Coastal';Chinese: 'æ²¿æµ·'),
+   (level: 4; max: 89999; min: 22000; English: 'Approach';Chinese: 'è¿›æ¸¯'),
+   (level: 5; max: 21999; min: 4000; English: 'Harbour';Chinese: 'æ¸¯å£'),
+   (level: 6; max: 3999; min: 0; English: 'Berthing'; Chinese: 'é æ³Š')
 
   );
 
 
 type
+  TtxS57FileProcessStyle = (psProjectStart, psStart, psWorking, psFinish, psProjectFinish);
+
+  //è¿›åº¦æ¡
+  ILoading = interface
+    procedure startLoad(obj: TObject; pos, max: integer);
+    procedure working(obj: TObject; pos, max: integer);
+    procedure finishLoad(obj: TObject; pos, max: integer);
+    function getDraw: ItxgisGLDataBuild;
+  end;
+
+
+
+
   TtxS57ResFile = class;
 
 
   TtxS57ResData = class(TPersistent)
+  private
+    FRect: TtxgisRect;
   protected
     procedure AssignTo(Dest: TPersistent); override;
+  public
+    procedure Save(stream: TStream); virtual;
+    procedure Load(stream: TStream); virtual;
+    property Rect: TtxgisRect read FRect;
   end;
 
- //Õâ¸öÀàÊÇÎªÁË±£´æÔÚS57Êı¾İÉÏµÄ»º´æ
+ //è¿™ä¸ªç±»æ˜¯ä¸ºäº†ä¿å­˜åœ¨S57æ•°æ®ä¸Šçš„ç¼“å­˜
   TtxS57resCache = class(TtxS57ResData)
   private
     FTriangles: TList<TtxgisTriangle>;
   protected
     procedure AssignTo(Dest: TPersistent); override;
   public
-    points: TtxgisPointGroup;
-    property Triangles: TList<TtxgisTriangle> read FTriangles; // ±£´æÈı½ÇĞÎ
+    wmPss: TtxgisPss; //ä¿å­˜çš„æ˜¯WebMercatorçš„ç‚¹æ•°æ®
+    earthPss: TtxgisPss; //ä¿å­˜çš„æ˜¯åœ°çƒæŠ•ç”¨
+    property Triangles: TList<TtxgisTriangle> read FTriangles; // ä¿å­˜ä¸‰è§’å½¢
     constructor Create;
     destructor Destroy; override;
-    procedure Save(stream: TStream);
-    procedure Load(stream: TStream);
+    procedure Save(stream: TStream); override;
+    procedure Load(stream: TStream); override;
 
   end;
 
@@ -65,7 +87,7 @@ type
     FgeoType: TtxS57ResGeoType;
     Ftag: TObject;
     Fcache: TtxS57resCache;
-    FExptend: TS57ExpendFeature;
+    FExpend: TS57ExpendFeature;
     FParent: TtxS57ResFile;
     function GetParentExptendFeatureRow: TS57ExpendRow;
   protected
@@ -90,19 +112,21 @@ type
     function findResObj: TtxS57resObject;
     function findGeos:  TArray<TArray<TtxgisPoint>>;
 
+    procedure initCache(draw: ItxgisGLDataBuild); //ä¸ºäº†ç»™ç»˜åˆ¶æå‰è£…è½½ç¼“å­˜æ•°æ®
+
+
     property code: integer read Fcode write Fcode;
     property attries: TDictionary<integer, string> read Fattries;
     property tag: TObject read Ftag write Ftag;
     property geo: TArray < TArray < TtxgisCoordinatePoint >> read Fgeo write Fgeo;
     property geoType: TtxS57ResGeoType read FgeoType write FgeoType;
-    property cache: TtxS57resCache read Fcache write Fcache; //ÓÃÓÚS52ÏÔÊ¾µÄ»º´æ
+    property cache: TtxS57resCache read Fcache write Fcache; //ç”¨äºS52æ˜¾ç¤ºçš„ç¼“å­˜
 
-    property Exptend: TS57ExpendFeature read FExptend; //·Ç±ê×¼À©Õ¹µÄÊôĞÔ
+    property Expend: TS57ExpendFeature read FExpend; //éæ ‡å‡†æ‰©å±•çš„å±æ€§
 
     property Parent: TtxS57ResFile read FParent;
     property ParentExptendFeatureRow: TS57ExpendRow read  GetParentExptendFeatureRow;
   end;
-
 
   TtxS57ResFeatures = class(TObjectList<TtxS57ResFeature>)
   public
@@ -112,22 +136,25 @@ type
 
   TtxS57ResFileClass = class of TtxS57ResFile;
 
+  TtxS57resFileCache = class(TtxS57ResData)
+  end;
+
+
   TtxS57ResFile = class(TtxS57ResData)
   private
     FfileName: string;
     Ffeatures: TtxS57ResFeatures;
-    FmaxRect: TtxgisCoordinateRect;
+    FCoordinateRect: TtxgisCoordinateRect;
     Ftag: TObject;
     FScale: integer;
     FDesc: string;
     FScaleRange: TtxS57ScaleRange;
-    FExptend: TS57ExpendFile;
+    FExpend: TS57ExpendFile;
     FINTU: Integer;
     FRDTN: String;
     FISDT: String;
     FAGEN: String;
-    function getMaxScale: integer;
-    function getMinScale: integer;
+    Fcache: TtxS57resFileCache;
   protected
     procedure AssignTo(Dest: TPersistent); override;
   public
@@ -137,28 +164,23 @@ type
     procedure Load(AStream: TStream); overload;
 
     function Selected(APos: TtxgisPoint): boolean;
+    procedure initCache;
 
     property fileName: string read FfileName write FfileName;
-    property furntures: TtxS57ResFeatures read Ffeatures;
-    property maxRect: TtxgisCoordinateRect read FmaxRect write FmaxRect;
+    property features: TtxS57ResFeatures read Ffeatures;
+    property CoordinateRect: TtxgisCoordinateRect read FCoordinateRect write FCoordinateRect;  //è¿™ä¸ªå†…å®¹æ¥è‡ªäºæ‘˜è¦æ–‡ä»¶ï¼Œå¹¶ä¸å‡†ç¡®
     property tag: TObject read Ftag write Ftag;
-    property Scale: integer read FScale write FScale; //ÖÆÍ¼±ÈÀı³ß
+    property Scale: integer read FScale write FScale; //åˆ¶å›¾æ¯”ä¾‹å°º
     property ScaleRange: TtxS57ScaleRange read FScaleRange write FScaleRange;
-    property Desc: string read FDesc write FDesc; //ÃèÊö
+    property Desc: string read FDesc write FDesc; //æè¿°
 
-    property INTU: Integer read FINTU write FINTU; //±ÈÀı³ßµÈ¼¶ 1-6
-    property ISDT: String read FISDT write FISDT; //·¢ĞĞÈÕÆÚ
-    property AGEN: String read FAGEN write FAGEN; //·¢ĞĞ»ú¹¹±àÂë£¬ºóÃæÓĞIHOµÄ¶ÔÕÕÃû³Æ±í
-    property RDTN: String read FRDTN write FRDTN; //·¢ĞĞ»ú¹¹±àÂë£¬ºóÃæÓĞIHOµÄ¶ÔÕÕÃû³Æ±í
+    property INTU: Integer read FINTU write FINTU; //æ¯”ä¾‹å°ºç­‰çº§ 1-6
+    property ISDT: String read FISDT write FISDT; //å‘è¡Œæ—¥æœŸ
+    property AGEN: String read FAGEN write FAGEN; //å‘è¡Œæœºæ„ç¼–ç ï¼Œåé¢æœ‰IHOçš„å¯¹ç…§åç§°è¡¨
+    property RDTN: String read FRDTN write FRDTN; //å‘è¡Œæœºæ„ç¼–ç ï¼Œåé¢æœ‰IHOçš„å¯¹ç…§åç§°è¡¨
 
-
-
-
-
-    property Exptend: TS57ExpendFile read FExptend; //·Ç±ê×¼À©Õ¹µÄÊôĞÔ
-
-    property MinScale: integer read getMinScale;
-    property MaxScale: integer read getMaxScale;
+    property Expend: TS57ExpendFile read FExpend; //éæ ‡å‡†æ‰©å±•çš„å±æ€§
+    property cache: TtxS57resFileCache read Fcache write Fcache; //ç”¨äºS52æ˜¾ç¤ºçš„ç¼“å­˜
 
     constructor Create; virtual;
     destructor Destroy; override;
@@ -190,46 +212,52 @@ begin
     var _fea := _dest.Ffeatures.Add(_dest);
     _fea.Assign(fea);
   end;
-    _dest.FmaxRect := FmaxRect;
-    _dest.Ftag := Ftag;
-    _dest.FScale := FScale;
-    _dest.FDesc := FDesc;
-    _dest.FScaleRange := FScaleRange;
-    _dest.FExptend.Assign(FExptend);
-    _dest.FINTU := FINTU;
-    _dest.FRDTN := FRDTN;
-    _dest.FISDT := FISDT;
-    _dest.FAGEN := FAGEN;
+  _dest.FCoordinateRect := FCoordinateRect;
+  _dest.Ftag := Ftag;
+  _dest.FScale := FScale;
+  _dest.FDesc := FDesc;
+  _dest.FScaleRange := FScaleRange;
+  _dest.FExpend.Assign(FExpend);
+  _dest.FINTU := FINTU;
+  _dest.FRDTN := FRDTN;
+  _dest.FISDT := FISDT;
+  _dest.FAGEN := FAGEN;
+
+  if Fcache <> nil then
+  begin
+    if _dest.Fcache = nil then
+      _dest.Fcache := TtxS57resFileCache.Create;
+    _dest.Fcache.Assign(Fcache);
+  end;
+  _dest.FExpend.Assign(FExpend);
+
+
 end;
 
 constructor TtxS57ResFile.Create;
 begin
   inherited Create;
   Ffeatures := TtxS57ResFeatures.Create;
-  FExptend := TS57ExpendFile.Create;
+  FExpend := TS57ExpendFile.Create;
 end;
 
 destructor TtxS57ResFile.Destroy;
 begin
-  FExptend.Free;
+  FExpend.Free;
   Ffeatures.Free;
+  FreeAndNil(Fcache);
   inherited Destroy;
 end;
 
-function TtxS57ResFile.getMaxScale: integer;
-begin
-  if FExptend.MaxScale = -1 then
-    Result := FScaleRange.max
-  else
-    Result := FExptend.MaxScale;
-end;
 
-function TtxS57ResFile.getMinScale: integer;
+
+procedure TtxS57ResFile.initCache;
 begin
-  if FExptend.MinScale = -1 then
-    Result := FScaleRange.min
-  else
-    Result := FExptend.MinScale;
+  if FCache = nil then
+  begin
+    FCache := TtxS57resFileCache.Create;
+    FCache.Rect.setNull;
+  end;
 end;
 
 procedure TtxS57ResFile.Load(AFileName: string);
@@ -253,12 +281,12 @@ begin
   SetLength(byte, len);
   AStream.ReadData(byte, len);
   filename := TEncoding.UTF8.GetString(byte);
-  AStream.read(FmaxRect, Sizeof(FmaxRect));
+  AStream.read(FCoordinateRect, Sizeof(FCoordinateRect));
 
 
 
   AStream.read(len, sizeOf(len));
-  FScaleRange := C_S57ScaleRange[len - 1];  //Ëõ·Å¼¶±ğ
+  FScaleRange := C_S57ScaleRange[len - 1];  //ç¼©æ”¾çº§åˆ«
 
 
 
@@ -269,7 +297,7 @@ begin
     Ffeatures.Add(self).Load(AStream);
   end;
 
-  FExptend.Load(AStream);
+  FExpend.Load(AStream);
 
   AStream.Read(FScale, Sizeof(FScale));
   AStream.Read(FINTU, Sizeof(FINTU));
@@ -288,6 +316,13 @@ begin
   SetLength(byte, len);
   AStream.ReadData(byte, len);
   FAGEN := TEncoding.UTF8.GetString(byte);
+
+  AStream.Read(len, sizeof(len));
+  if len > 0 then
+  begin
+    Fcache := TtxS57resFileCache.Create;
+    Fcache.Load(AStream);
+  end;
 
 
 end;
@@ -315,7 +350,7 @@ begin
   len := length(byte);
   AStream.Write(len, sizeOf(len));
   AStream.WriteData(byte, len);
-  AStream.Write(FmaxRect, Sizeof(FmaxRect));
+  AStream.Write(FCoordinateRect, Sizeof(FCoordinateRect));
 
 
   len := FScaleRange.level;
@@ -328,7 +363,7 @@ begin
   for featrue in Ffeatures do
     featrue.Save(AStream);
 
-  FExptend.Save(AStream);
+  FExpend.Save(AStream);
 
 
   AStream.Write(FScale, Sizeof(FScale));
@@ -351,13 +386,27 @@ begin
   AStream.Write(len, sizeOf(len));
   AStream.WriteData(byte, len);
 
+   //å†™ç¼“å­˜
+   if Fcache = nil then
+   begin
+     len := 0;
+     AStream.Write(len, sizeof(len));
+   end
+   else begin
+     len := 1;
+     AStream.Write(len, sizeof(len));
+     Fcache.Save(AStream);
+   end;
+
 
 
 end;
 
 function TtxS57ResFile.Selected(APos: TtxgisPoint): boolean;
 begin
-  var rect := GisLib.Proj.toRect(self.FmaxRect);
+  //è¿™é‡Œçš„FmaxRectæ¥è‡ªæ–‡ä»¶çš„æ‘˜è¦ï¼Œå¹¶ä¸å‡†ç¡®ï¼Œå¼ƒç”¨
+  //var rect := GisLib.Projection.toRect(self.FCoordinateRect);
+  var rect := self.cache.Rect;
   Result := rect.inSelf(APos);
 end;
 
@@ -365,7 +414,7 @@ procedure TtxS57ResFeature.AssignTo(Dest: TPersistent);
 begin
   inherited;
   var _dest := TtxS57ResFeature(Dest);
-//  _dest.FParent := FParent; //ÕâÀïÊÇÖ¸Õë£¬¸øÖ¸ÕëÔÚ´´½¨ÖĞÖ¸¶¨£¬²»ÄÜÍâ²¿¸ü¸Ä
+//  _dest.FParent := FParent; //è¿™é‡Œæ˜¯æŒ‡é’ˆï¼Œç»™æŒ‡é’ˆåœ¨åˆ›å»ºä¸­æŒ‡å®šï¼Œä¸èƒ½å¤–éƒ¨æ›´æ”¹
   _dest.Fattries.Clear;
   for var attr in Fattries do
   begin
@@ -393,20 +442,20 @@ begin
       _dest.Fcache := TtxS57resCache.Create;
     _dest.Fcache.Assign(Fcache);
   end;
-  _dest.FExptend.Assign(FExptend);
+  _dest.FExpend.Assign(FExpend);
 end;
 
 constructor TtxS57ResFeature.Create(parent: TtxS57ResFile);
 begin
   inherited Create;
   Fattries := TDictionary<integer, string>.Create;
-  FExptend := TS57ExpendFeature.Create;
+  FExpend := TS57ExpendFeature.Create;
   FParent := parent;
 end;
 
 destructor TtxS57ResFeature.Destroy;
 begin
-  FExptend.Free;
+  FExpend.Free;
   Fattries.Free;
   FreeAndNil(Fcache);
   inherited Destroy;
@@ -425,12 +474,11 @@ end;
 
 function TtxS57ResFeature.findAttrDouble(code: string; default: double): double;
 begin
+  Result := default;
   var attr := S57Res.GetResAtti(code);
-  if attr = nil then
-    Result := default
-  else
-  if attries.ContainsKey(attr.Code) then
-    Result := StrToFloatDef(attries[attr.Code], default);
+  if attr <> nil then
+    if attries.ContainsKey(attr.Code) then
+       Result := StrToFloatDef(attries[attr.Code], default);
 end;
 
 function TtxS57ResFeature.findAttrDoubleValue(code: string;
@@ -495,7 +543,7 @@ begin
     Setlength(Result, length(ss));
     for i := 0 to length(ss) - 1 do
     begin
-      { TODO : 2018-04-04 ·µ»ØÓĞ´íÎóµÄ¿Õ¸ñ }
+      { TODO : 2018-04-04 è¿”å›æœ‰é”™è¯¯çš„ç©ºæ ¼ }
       Result[i] := StrToIntDef(ss[i], 0);
       //-----
     end;
@@ -551,7 +599,7 @@ end;
 
 function TtxS57ResFeature.findGeos: TArray<TArray<TtxgisPoint>>;
 begin
-  Result := GisLib.Proj.toPoint(Fgeo);
+  Result := GisLib.Projection.toPoint(Fgeo);
 end;
 
 function TtxS57ResFeature.findResObj: TtxS57resObject;
@@ -561,12 +609,34 @@ end;
 
 function TtxS57ResFeature.GetParentExptendFeatureRow: TS57ExpendRow;
 begin
-  if self.FParent.Exptend.FeatureRows.ContainsKey(code) then
-    Result := self.FParent.Exptend.FeatureRows[code]
+  if self.FParent.Expend.FeatureRows.ContainsKey(code) then
+    Result := self.FParent.Expend.FeatureRows[code]
   else
     Result := nil;
 end;
 
+
+procedure TtxS57ResFeature.initCache(draw: ItxgisGLDataBuild);
+begin
+  if draw = nil then exit;
+  if Fcache = nil then
+  begin
+    FCache := TtxS57resCache.Create;
+    FCache.Rect.setNull;
+    FCache.wmPss := GisLib.Projection.toPoint(geo);
+    if length(FCache.wmPss) > 0 then
+    begin
+
+      for var ps in Fcache.wmPss do
+         for var p in ps do
+           FCache.Rect.max(p);
+
+      if self.geoType <> vtArea then exit;
+        draw.DecomposingPolygons(Fcache.wmPss, Fcache.Triangles);
+    end
+  end;
+
+end;
 
 procedure TtxS57ResFeature.Load(stream: TStream);
 var
@@ -621,7 +691,7 @@ var
   _geos: TArray<TtxgisCoordinatePoint>;
   _geo: TtxgisCoordinatePoint;
 begin
-   //Ğ´ÊôĞÔ
+   //å†™å±æ€§
    len := Fattries.Count;
    stream.Write(len, sizeof(len));
    for attr in Fattries do
@@ -650,7 +720,7 @@ begin
    end;
    stream.Write(FgeoType, sizeof(FgeoType));
 
-   //Ğ´»º´æ
+   //å†™ç¼“å­˜
    if Fcache = nil then
    begin
      len := 0;
@@ -735,7 +805,7 @@ procedure TtxS57ResFiles.Load(AStream: TStream);
 var
   i, len: Integer;
 begin
-  //¶ÁÊıÁ¿
+  //è¯»æ•°é‡
   AStream.Read(len, sizeOf(len));
   for i := 0 to len - 1 do
     self.Add;
@@ -762,7 +832,7 @@ procedure TtxS57ResFiles.Save(AStream: TStream);
 var
   i, len: Integer;
 begin
-  //Ğ´ÊıÁ¿
+  //å†™æ•°é‡
   len := self.Count;
   AStream.Write(len, sizeOf(len));
   for i := 0 to len - 1 do
@@ -778,13 +848,14 @@ procedure TtxS57resCache.AssignTo(Dest: TPersistent);
 begin
   inherited;
   var _dest := TtxS57resCache(dest);
+
   _dest.FTriangles.Clear;
   for var tri in self.FTriangles do
   begin
     _dest.FTriangles.Add(tri);
   end;
 
-  _dest.points := points;
+  _dest.wmPss := wmPss;
 end;
 
 constructor TtxS57resCache.Create;
@@ -803,18 +874,18 @@ var
   i, j, len, len1: integer;
 begin
   stream.read(len, sizeof(len));
-  setLength(points, len);
+  setLength(wmPss, len);
   for i := 0 to len - 1 do
   begin
     stream.read(len1, sizeof(len1));
-    setLength(points[i], len1);
+    setLength(wmPss[i], len1);
     for j := 0 to len1 - 1 do
     begin
-     stream.read(points[i][j], Sizeof(TtxgisPoint));
+     stream.read(wmPss[i][j], Sizeof(TtxgisPoint));
     end;
   end;
 
-  //Èı½ÇĞÎ»º´æ
+  //ä¸‰è§’å½¢ç¼“å­˜
   stream.Read(len, sizeof(len));
   for i := 0 to len - 1 do
   begin
@@ -828,9 +899,9 @@ procedure TtxS57resCache.Save(stream: TStream);
 var
   len: integer;
 begin
-  len := Length(points);
+  len := Length(wmPss);
   stream.Write(len, sizeof(len));
-  for var ps in points do
+  for var ps in wmPss do
   begin
      len := Length(ps);
      stream.Write(len, sizeof(len));
@@ -840,7 +911,7 @@ begin
      end;
   end;
 
-  //Èı½ÇĞÎ»º´æ
+  //ä¸‰è§’å½¢ç¼“å­˜
   len := self.Triangles.Count;
   stream.Write(len, sizeof(len));
   for var tri in Triangles do
@@ -855,7 +926,21 @@ end;
 procedure TtxS57ResData.AssignTo(Dest: TPersistent);
 begin
 //  inherited;
+  var _dest := TtxS57resCache(dest);
+  _dest.FRect := FRect;
 
+end;
+
+
+
+procedure TtxS57ResData.Load(stream: TStream);
+begin
+  stream.Read(FRect, sizeof(FRect));
+end;
+
+procedure TtxS57ResData.Save(stream: TStream);
+begin
+  stream.Write(FRect, sizeof(FRect));
 end;
 
 end.

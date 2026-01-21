@@ -32,7 +32,7 @@ var
   key: integer;
   count: integer;
 begin
-  //Ğ´¸öÊı
+  //å†™ä¸ªæ•°
   count := resFeature.attries.Count;
   keyvalueStream.write(count, SizeOf(integer));
   for pair in resFeature.attries do
@@ -96,13 +96,13 @@ begin
   fillChar(importFile, Sizeof(importFile), 0);
   byte := TEncoding.ASCII.GetBytes(resFile.fileName);
   Move(PChar(byte)^, importFile.caption, 16);
-  importFile.rect.Create(resFile.maxRect);
+  importFile.rect.Create(resFile.CoordinateRect);
   importFile.feature := featureStream.Position;
   fileStream.Write(importFile, SizeOf(importFile));
-  //Ğ´ÊıÁ¿
-  count := resFile.furntures.Count;
+  //å†™æ•°é‡
+  count := resFile.features.Count;
   featureStream.Write(count, SizeOf(count));
-  for _resFeature in resFile.furntures do
+  for _resFeature in resFile.features do
   begin
 
      if _resFeature.code = 41 then
@@ -123,7 +123,7 @@ var
   lonlat: TLonlat;
 begin
   Result.setNull;
-  //Ğ´¾­Î³¶È×éµÄÊıÁ¿
+  //å†™ç»çº¬åº¦ç»„çš„æ•°é‡
   key := Length(resFeature.geo);
   lonlatStream.Write(key, SizeOf(key));
   for i := 0 to key - 1 do
@@ -171,12 +171,12 @@ begin
 
   fileStream := TMemoryStream.Create;
   rect.setNull;
-  fileStream.write(ADB.Count, Sizeof(integer)); //ÎÄ¼şÊı
+  fileStream.write(ADB.Count, Sizeof(integer)); //æ–‡ä»¶æ•°
   for _resFile in ADB do
   begin
     buildFile(_resFile, fileStream, featureStream, keyvalueStream, lonlatStream);
-    rect.max(_resFile.maxRect.westnorth);
-    rect.max(_resFile.maxRect.eastsouth);
+    rect.max(_resFile.CoordinateRect.westnorth);
+    rect.max(_resFile.CoordinateRect.eastsouth);
   end;
 
   byte := TEncoding.UTF8.GetBytes(caption);

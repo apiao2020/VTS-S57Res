@@ -8,9 +8,10 @@ uses
 type
 
   TShowStyle = (
-        ssNone,      //Ã»±ä»¯
-        ssSelected
-
+        ssShow,      //æ²¡å˜åŒ–
+        ssHide,
+        ssSlowFlash,
+        ssFastFlash
 
         )
 
@@ -24,6 +25,7 @@ type
     FTextMaxScale: Integer;
     FShowOnSelected: TShowStyle;
     FhadBuilded: boolean;
+    FHide: boolean;
   protected
     procedure AssignTo(Dest: TPersistent); override;
   public
@@ -34,8 +36,9 @@ type
     destructor Destroy; override;
     procedure Save(stream: TStream); virtual;
     procedure Load(stream: TStream); virtual;
-    property ShowOnSelected: TShowStyle read FShowOnSelected write FShowOnSelected; //µ±Ç°ÊÇ·ñÏÔÊ¾,Èç¹û ±»Ñ¡Ôñ
-    property hadBuilded: boolean read FhadBuilded write FhadBuilded; //µ±Ç°ÊÇ·ñÕıÔÚ´´½¨»æÖÆ
+    property ShowOnSelected: TShowStyle read FShowOnSelected write FShowOnSelected; //å½“å‰æ˜¯å¦æ˜¾ç¤º,å¦‚æœ è¢«é€‰æ‹©
+    property Hide: boolean read FHide write FHide;
+    property hadBuilded: boolean read FhadBuilded write FhadBuilded; //å½“å‰æ˜¯å¦æ­£åœ¨åˆ›å»ºç»˜åˆ¶
   end;
 
   TS57ExpendRow = class(TS57Expend)
@@ -85,16 +88,20 @@ begin
   _dest.FMinScale := FMinScale;
   _dest.FMaxScale := FMaxScale;
   _dest.FTextMaxScale := FTextMaxScale;
-
+  _dest.FShowOnSelected := FShowOnSelected;
+  _dest.FhadBuilded := FhadBuilded;
+  _dest.FHide := FHide;
 end;
 
 constructor TS57Expend.Create;
 begin
   inherited Create;
-  //Ä¬ÈÏÖµÊÇ¿ÕÖÃ
+  //é»˜è®¤å€¼æ˜¯ç©ºç½®
   FMinScale := -1;
   FMaxScale := -1;
   FTextMaxScale := -1;
+  FHide := False; //ä¸æ˜¾ç¤º
+  FShowOnSelected := ssShow;
 end;
 
 destructor TS57Expend.Destroy;
