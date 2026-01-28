@@ -9,7 +9,8 @@ uses
   txS57Res.Res,
   txGis.Utils,
  // CodeSiteLogging,
-  txGis.Lib;
+  txGis.Lib,
+  txgisCanvas.Utils;
 
 type
 
@@ -23,29 +24,32 @@ type
 
 const
   C_S57ScaleRange: array[0..5] of TtxS57ScaleRange = (
-   (level: 1; max: 3000000; min: 150000; English: 'Overview'; Chinese: '概览'),
-   (level: 2; max: 1499999; min: 350000; English: 'General';Chinese: '一般'),
-   (level: 3; max: 349999; min: 90000; English: 'Coastal';Chinese: '沿海'),
-   (level: 4; max: 89999; min: 22000; English: 'Approach';Chinese: '进港'),
-   (level: 5; max: 21999; min: 4000; English: 'Harbour';Chinese: '港口'),
-   (level: 6; max: 3999; min: 0; English: 'Berthing'; Chinese: '靠泊')
+   (level: 1; max: 3000000; min: 200; English: 'Overview'; Chinese: '概览'),
+   (level: 2; max: 1499999; min: 200; English: 'General';Chinese: '一般'),
+   (level: 3; max: 349999; min: 200; English: 'Coastal';Chinese: '沿海'),
+   (level: 4; max: 6000; min: 200; English: 'Approach';Chinese: '进港'),
+   (level: 5; max: 21999; min: 200; English: 'Harbour';Chinese: '港口'),
+   (level: 6; max: 3999; min: 200; English: 'Berthing'; Chinese: '靠泊')
 
   );
 
+//   C_S57ScaleRange: array[0..5] of TtxS57ScaleRange = (
+//   (level: 1; max: 3000000; min: 150000; English: 'Overview'; Chinese: '概览'),
+//   (level: 2; max: 1499999; min: 350000; English: 'General';Chinese: '一般'),
+//   (level: 3; max: 349999; min: 90000; English: 'Coastal';Chinese: '沿海'),
+//   (level: 4; max: 89999; min: 22000; English: 'Approach';Chinese: '进港'),
+//   (level: 5; max: 21999; min: 4000; English: 'Harbour';Chinese: '港口'),
+//   (level: 6; max: 3999; min: 0; English: 'Berthing'; Chinese: '靠泊')
+//
+//  );
+
+
 
 type
-  TtxS57FileProcessStyle = (psProjectStart, psStart, psWorking, psFinish, psProjectFinish);
 
-  //进度条
-  ILoading = interface
-    procedure startLoad(obj: TObject; pos, max: integer);
-    procedure working(obj: TObject; pos, max: integer);
-    procedure finishLoad(obj: TObject; pos, max: integer);
+ IS57Loading = interface(ILoading)
     function getDraw: ItxgisGLDataBuild;
-  end;
-
-
-
+ end;
 
   TtxS57ResFile = class;
 
