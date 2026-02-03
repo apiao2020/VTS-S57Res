@@ -1,4 +1,4 @@
-unit txS57Res.Expend;
+﻿unit txS57Res.Expend;
 
 interface
 uses
@@ -26,6 +26,7 @@ type
     FShowOnSelected: TShowStyle;
     FhadBuilded: boolean;
     FHide: boolean;
+    FtextUpdateTime: int64;
   protected
     procedure AssignTo(Dest: TPersistent); override;
   public
@@ -39,9 +40,10 @@ type
     property ShowOnSelected: TShowStyle read FShowOnSelected write FShowOnSelected; //当前是否显示,如果 被选择
     property Hide: boolean read FHide write FHide;
     property hadBuilded: boolean read FhadBuilded write FhadBuilded; //当前是否正在创建绘制
+    property textUpdateTime: int64 read FtextUpdateTime write FtextUpdateTime; //当前文本处理结束时间，用于判断是否有新的更新文本
   end;
 
-  TS57ExpendRow = class(TS57Expend)
+  TS57ExpendRow = class(TS57Expend)   //保存的是当前file中包含物标的种类和数量
   private
     FCode: Integer;
     FCount: Integer;
