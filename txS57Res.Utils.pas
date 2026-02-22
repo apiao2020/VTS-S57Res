@@ -10,28 +10,11 @@ uses
   txGis.Utils,
  // CodeSiteLogging,
   txGis.Lib,
+  txGis.Projection,
   txgisCanvas.Utils;
 
 type
 
-   TtxS57ScaleRange = record
-    level: integer;
-    max: integer;
-    min: Integer;
-    English: string;
-    Chinese: string;
-  end;
-
-const
-  C_S57ScaleRange: array[0..5] of TtxS57ScaleRange = (
-   (level: 1; max: 3000000; min: 200; English: 'Overview'; Chinese: '概览'),
-   (level: 2; max: 1499999; min: 200; English: 'General';Chinese: '一般'),
-   (level: 3; max: 349999; min: 200; English: 'Coastal';Chinese: '沿海'),
-   (level: 4; max: 6000; min: 200; English: 'Approach';Chinese: '进港'),
-   (level: 5; max: 21999; min: 200; English: 'Harbour';Chinese: '港口'),
-   (level: 6; max: 3999; min: 200; English: 'Berthing'; Chinese: '靠泊')
-
-  );
 
 //   C_S57ScaleRange: array[0..5] of TtxS57ScaleRange = (
 //   (level: 1; max: 3000000; min: 150000; English: 'Overview'; Chinese: '概览'),
@@ -44,9 +27,6 @@ const
 //  );
 
 
-
-type
-
  IS57Loading = interface(ILoading)
     function getDraw: ItxgisGLDataBuild;
  end;
@@ -54,12 +34,20 @@ type
   TtxS57ResFile = class;
 
 
-  TtxS57ResData = class(TPersistent)
+  TtxS57ResData = class(TPersistent, IInterface)
   private
     FRect: TtxgisRect;
   protected
+    function QueryInterface(const IID: TGUID; out Obj): HResult; stdcall;
+    function _AddRef: Integer; stdcall;
+    function _Release: Integer; stdcall;
+
+
+
+
     procedure AssignTo(Dest: TPersistent); override;
   public
+    selectedDrawData:  TArray<TMetaData>;
     procedure Save(stream: TStream); virtual;
     procedure Load(stream: TStream); virtual;
     property Rect: TtxgisRect read FRect;
@@ -75,6 +63,7 @@ type
     wmPss: TtxgisPss; //保存的是WebMercator的点数据
     earthPss: TtxgisPss; //保存的是地球投用
     property Triangles: TList<TtxgisTriangle> read FTriangles; // 保存三角形
+
     constructor Create;
     destructor Destroy; override;
     procedure Save(stream: TStream); override;
@@ -144,7 +133,7 @@ type
   end;
 
 
-  TtxS57ResFile = class(TtxS57ResData)
+  TtxS57ResFile = class(TtxS57ResData, IS57ExpendInfo)
   private
     FfileName: string;
     Ffeatures: TtxS57ResFeatures;
@@ -159,6 +148,10 @@ type
     FISDT: String;
     FAGEN: String;
     Fcache: TtxS57resFileCache;
+
+    function GetScaleRange: TtxS57ScaleRange; //当前图的显示级别
+
+
   protected
     procedure AssignTo(Dest: TPersistent); override;
   public
@@ -167,9 +160,13 @@ type
     procedure Load(AFileName: string); overload;
     procedure Load(AStream: TStream); overload;
 
+
+
+    procedure calFeaturesDistance; //计算相同物标间的距离
+
+
     function Selected(APos: TtxgisPoint): boolean;
     procedure initCache;
-
     property fileName: string read FfileName write FfileName;
     property features: TtxS57ResFeatures read Ffeatures;
     property CoordinateRect: TtxgisCoordinateRect read FCoordinateRect write FCoordinateRect;  //这个内容来自于摘要文件，并不准确
@@ -238,11 +235,36 @@ begin
 
 end;
 
+procedure TtxS57ResFile.calFeaturesDistance;
+begin
+  for var feaA in features do
+  begin
+    if feaA.geoType <> vtPoint then continue;
+    if Length(feaA.geo) = 0 then  continue;
+    if Length(feaA.geo[0]) = 0 then  continue;
+    var dA := feaA.geo[0][0];
+    for var feaB in features do
+    begin
+      if feaB.geoType <> vtPoint then continue;
+      if feaA = feaB then continue;
+      if feaA.code <> feaB.code then continue;
+      if Length(feaB.geo) = 0 then  continue;
+      if Length(feaB.geo[0]) = 0 then  continue;
+      var dB := feaB.geo[0][0];
+      var d := GisLib.Projection.distance(dA, dB);
+
+      //没用
+
+
+    end;
+  end;
+end;
+
 constructor TtxS57ResFile.Create;
 begin
   inherited Create;
   Ffeatures := TtxS57ResFeatures.Create;
-  FExpend := TS57ExpendFile.Create;
+  FExpend := TS57ExpendFile.Create(self);
 end;
 
 destructor TtxS57ResFile.Destroy;
@@ -254,6 +276,11 @@ begin
 end;
 
 
+
+function TtxS57ResFile.GetScaleRange: TtxS57ScaleRange;
+begin
+  Result := FScaleRange;
+end;
 
 procedure TtxS57ResFile.initCache;
 begin
@@ -628,6 +655,7 @@ begin
     FCache := TtxS57resCache.Create;
     FCache.Rect.setNull;
     FCache.wmPss := GisLib.Projection.toPoint(geo);
+
     if length(FCache.wmPss) > 0 then
     begin
 
@@ -942,9 +970,27 @@ begin
   stream.Read(FRect, sizeof(FRect));
 end;
 
+function TtxS57ResData.QueryInterface(const IID: TGUID; out Obj): HResult;
+begin
+  if GetInterface(IID, Obj) then
+    Result := S_OK
+  else
+    Result := E_NOINTERFACE;
+end;
+
 procedure TtxS57ResData.Save(stream: TStream);
 begin
   stream.Write(FRect, sizeof(FRect));
+end;
+
+function TtxS57ResData._AddRef: Integer;
+begin
+  Result := -1;
+end;
+
+function TtxS57ResData._Release: Integer;
+begin
+  Result := -1;
 end;
 
 end.

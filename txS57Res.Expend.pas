@@ -3,10 +3,35 @@
 interface
 uses
   System.Classes,
-  System.Generics.Collections;
+  System.Generics.Collections,
+  txgisCanvas.Draw;
 
 type
 
+   TtxS57ScaleRange = record
+    level: integer;
+    max: integer;
+    min: Integer;
+    English: string;
+    Chinese: string;
+  end;
+
+
+const
+  C_S57ScaleRange: array[0..5] of TtxS57ScaleRange = (
+   (level: 1; max: 3000000; min: 200; English: 'Overview'; Chinese: '概览'),
+   (level: 2; max: 1499999; min: 200; English: 'General';Chinese: '一般'),
+//   (level: 3; max: 15000; min: 200; English: 'Coastal';Chinese: '沿海'),
+   (level: 3; max: 3000000; min: 200; English: 'Coastal';Chinese: '沿海'),
+   (level: 4; max: 2500; min: 200; English: 'Approach';Chinese: '进港'),
+   (level: 5; max: 600; min: 200; English: 'Harbour';Chinese: '港口'),
+   (level: 6; max: 400; min: 100; English: 'Berthing'; Chinese: '靠泊')
+
+  );
+
+
+
+type
   TShowStyle = (
         ssShow,      //没变化
         ssHide,
@@ -17,6 +42,9 @@ type
 
         ;
 
+  IS57ExpendInfo = interface
+    function GetScaleRange: TtxS57ScaleRange; //当前图的显示级别
+  end;
 
   TS57Expend = class(TPersistent)
   private
@@ -28,8 +56,10 @@ type
     FHide: boolean;
     FtextUpdateTime: int64;
   protected
+    function GetMaxScaleAll: integer; virtual;
     procedure AssignTo(Dest: TPersistent); override;
   public
+    property MaxScaleAll: integer read GetMaxScaleAll; //当前实际的MMaxScale的，区别于自身的设置
     property MinSCale: Integer read FMinScale write FMinScale;
     property MaxScale: Integer read FMaxScale write FMaxScale;
     property TextMaxScale: Integer read FTextMaxScale write FTextMaxScale;
@@ -57,21 +87,27 @@ type
 
   end;
 
+
+
   TS57ExpendFile = class(TS57Expend)
   private
+    FExpendInfo: IS57ExpendInfo;
     FShowRect: boolean;
     FFeatureRows: TObjectDictionary<integer, TS57ExpendRow>;
     FShowForever: boolean;
+    FDrawTag: IMetaLoadData;
   protected
+    function GetMaxScaleAll: integer; override;
     procedure AssignTo(Dest: TPersistent); override;
   public
-    constructor Create; override;
+    constructor Create(expendInfo: IS57ExpendInfo);
     destructor Destroy; override;
     procedure Save(stream: TStream); override;
     procedure Load(stream: TStream); override;
     property ShowRect: boolean read FShowRect write FShowRect;
     property ShowForever: boolean read FShowForever write FShowForever;
     property FeatureRows: TObjectDictionary<integer, TS57ExpendRow> read FFeatureRows;
+    property DrawTag: IMetaLoadData read  FDrawTag write FDrawTag;
   end;
 
   TS57ExpendFeature = class(TS57Expend)
@@ -111,6 +147,11 @@ begin
   inherited Destroy;
 end;
 
+function TS57Expend.GetMaxScaleAll: integer;
+begin
+  Result := -1;
+end;
+
 procedure TS57Expend.Load(stream: TStream);
 begin
   stream.Read(FMinScale, SizeOf(FMinScale));
@@ -133,6 +174,9 @@ begin
   var _dest := TS57ExpendFile(dest);
   _dest.FShowRect := FShowRect;
   _dest.FShowForever := FShowForever;
+  _dest.FExpendInfo := FExpendInfo;
+  _dest.FDrawTag := FDrawTag;
+
   _dest.FFeatureRows.Clear;
   for var row in FFeatureRows do
   begin
@@ -143,10 +187,11 @@ begin
 
 end;
 
-constructor TS57ExpendFile.Create;
+constructor TS57ExpendFile.Create(expendInfo: IS57ExpendInfo);
 begin
-  inherited;
+  inherited Create;
   FFeatureRows := TObjectDictionary<integer, TS57ExpendRow>.Create([doOwnsValues]);
+  FExpendInfo := expendInfo;
   FShowForever := True;
 end;
 
@@ -154,6 +199,15 @@ destructor TS57ExpendFile.Destroy;
 begin
   FFeatureRows.Free;
   inherited;
+end;
+
+function TS57ExpendFile.GetMaxScaleAll: integer;
+begin
+  var maxScale := FExpendInfo.GetScaleRange.max;
+  //写入cache
+  if self.MaxScale <> -1 then
+    maxScale := self.MaxScale;
+  Result := maxScale;
 end;
 
 procedure TS57ExpendFile.Load(stream: TStream);
